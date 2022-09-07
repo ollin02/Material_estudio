@@ -1,0 +1,5 @@
+Diseñar un programa para trabajar con triangulos isósceles. 
+Para ello defina los atributos necesarios que requieren, proporcione métodos de consulta,
+un método  constructor e implemente métodos pra calcular el perímetro y el área de 
+un triángulo, además implementar un método que a partir de un arreglo de triángulos devuelva
+el área del triangulo de mayor superficie.

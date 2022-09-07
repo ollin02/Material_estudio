@@ -1,0 +1,8 @@
+Hacer un programa para calculae el área de polígonos (Triangulos y Rectángulos) 
+el programa debe ser capaz de almacenar en un arreglo N triángulos y rectangulos, y al 
+final mostrar el área y los datos de cada uno. Para ello se tendrá lo siguiente:
+
+-Una super clase llamada Poligono.
+-Una sub clase llamada Rectángulo.
+-Una sub clase llamada Triángulo.
+

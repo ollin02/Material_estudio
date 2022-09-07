@@ -1,0 +1,7 @@
+Creas un programa para simular un equipo de futbol (fuutbolista, entrenador y doctor), para lo cual tendremos lo siguinte:
+-Una super clase Persona, que tendra los siguientes datos:nombre,apellido, edad.
+-La sub clase Futbolista tendra los siguientes datos: dorsal y posición.
+-La sub clase Entrenador tendra de dato la estrategia que utiliza.
+-La sub clase Doctor, la titulación y los años de experiencia.
+Hacer un menú donde se tenga las siguientes opciones: Viaje de equipo, entrenamiento, partido de futbol, planificar entrenamiento,
+entrevista, curar lesión

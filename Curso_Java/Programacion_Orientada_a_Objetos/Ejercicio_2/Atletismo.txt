@@ -1,0 +1,5 @@
+Costruri un programa para una competencia de atletismo, el programa debe 
+gestionar una serie de atletas caraterizados por su número de atleta, nombre
+tiempo de carrera, al final el programa debe mostrar los datos del atleta 
+ganador de la carrera.
+ 

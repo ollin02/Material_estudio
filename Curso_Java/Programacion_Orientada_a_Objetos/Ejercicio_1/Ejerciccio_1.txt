@@ -1,0 +1,3 @@
+Construir un programa que dad una serie de vehículos caraterizados por su marca, modelo y precio
+imprimir las propiedades del vehículo más  barato. Para ello, se deberán leer por teclado las 
+caracteristicas de cada vehículo y crear una clase que represente a cada uno de ellos.
