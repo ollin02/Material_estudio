@@ -1,4 +1,4 @@
-package ventana;
+package ventana_1;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -8,6 +8,7 @@ import javax.swing.JFrame;//Paque de graficos de java JFrame es una clases con l
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 
 public class Ventana extends JFrame{
 	public Ventana() {
@@ -32,22 +33,31 @@ public class Ventana extends JFrame{
 		panel.setLayout(null);//Desacrivamos el Diseño
 		this.getContentPane().add(panel);//Agregamos el panel a la ventana
 		
+		//Etiqueta 1 - etiqueta tipo Texto
 		//JLabel etiqueta =new JLabel("Hola",SwingConstants.CENTER);//Creamo una etiqueta
 		//Otra forma
 		JLabel etiqueta =new JLabel();//Creamos la etiqueta
-		etiqueta.setText("Hola");//Establecemos el texto de la etiquet
-		etiqueta.setBounds(10, 10, 100, 40);//(,,ancho,alto)
+		etiqueta.setText("Mundial 2018");//Establecemos el texto de la etiquet
+		etiqueta.setBounds(85, 10, 300, 80);//(posicion,posicio,ancho,alto)
 		etiqueta.setHorizontalAlignment(SwingConstants.CENTER);//Establecemos la alinaiación horizontal en la etique
-		etiqueta.setForeground(Color.WHITE);//Establecemos el color de la letra de nuesta etiqueta
-		etiqueta.setOpaque(true);//Estblecemos pintar el fondo de la etiqueta
-		etiqueta.setBackground(Color.BLACK);//ambiamo es color de fondo de nuestra etiqueta
-		etiqueta.setFont(new Font("chiller",3,40));//Establecemos la furntr del texto Font. establecemos el tipo de letra PLAIN es arial en la pocicion de Font.PLAIN se pueden poner los estilos de forma numerica
+		etiqueta.setForeground(Color.BLACK);//Establecemos el color de la letra de nuesta etiqueta
+		//etiqueta.setOpaque(true);//Estblecemos pintar el fondo de la etiqueta
+		//etiqueta.setBackground(Color.BLACK);//ambiamo es color de fondo de nuestra etiqueta
+		etiqueta.setFont(new Font("cooper black",0,40));//Establecemos la furntr del texto Font. establecemos el tipo de letra PLAIN es arial en la pocicion de Font.PLAIN se pueden poner los estilos de forma numerica
 		panel.add(etiqueta);//Agregamos la etiquetla al panel
 		
 		
 		
 		//Etiqueta - etiqueta tipo imagen
+		//ImageIcon imagen = new ImageIcon("mundial_2018.jpg");
+		//JLabel etiqueta2 = new JLabel(imagen);
+		//Otra forma
+		//JLabel etiqueta2 = new JLabel();
+		//etiqueta2.setIcon(new ImageIcon("mundial_2018.jpg"));
 		
+		JLabel etiqueta2 = new JLabel(new ImageIcon("mundial_2018.jpg"));
+		etiqueta2.setBounds(10, 80, 458, 458);//setBounds(eje x, eje y, WIDTH, HEIGHT);
+		panel.add(etiqueta2);
 	}
 	
 
