@@ -13,9 +13,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 
 public class Ventana extends JFrame{
@@ -176,5 +178,17 @@ public class Ventana extends JFrame{
 		
 		System.out.println("El texto es: "+areaTexto1.getText());
 		panel.add(areaTexto1);
+		
+		//Barras de desplazamiento
+		//JScrollPane barrasDesplazamiento = new JScrollPane(areaTexto1);
+		//barrasDesplazamiento.setBounds(20, 20, 300, 200);
+		//barrasDesplazamiento.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+		//barrasDesplazamiento.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		
+		
+		//otrometodo mas corto de barras de desplazamiento
+		JScrollPane barrasDesplazamiento = new JScrollPane(areaTexto1,ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		barrasDesplazamiento.setBounds(20, 20, 300, 200);
+		panel.add(barrasDesplazamiento);
 	}
 }
