@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JToggleButton;
 import javax.swing.SwingConstants;
 
 public class Ventana extends JFrame{
@@ -39,7 +40,8 @@ public class Ventana extends JFrame{
 		colocarPaneles();
 		//colocarEtiquetas();
 		//colocarBotones();
-		colocarRadioBotones();
+		//colocarRadioBotones();
+		colocarcarBotonesActivacion();
 		
 	}
 	
@@ -129,5 +131,24 @@ public class Ventana extends JFrame{
 		grupoRadioBtotones.add(radioBoton1);
 		grupoRadioBtotones.add(radioBoton2);
 		grupoRadioBtotones.add(radioBoton3);
+	}
+	
+	private void colocarcarBotonesActivacion() {
+		JToggleButton botonActivacion1 = new JToggleButton("OPcion 1", true);
+		botonActivacion1.setBounds(50, 100, 100, 40);
+		panel.add(botonActivacion1);
+		
+		JToggleButton botonActivacion2 = new JToggleButton("OPcion 2", false);
+		botonActivacion2.setBounds(50, 150, 100, 40);
+		panel.add(botonActivacion2);
+		
+		JToggleButton botonActivacion3 = new JToggleButton("OPcion 3", false);
+		botonActivacion3.setBounds(50, 200, 100, 40);
+		panel.add(botonActivacion3);
+		
+		ButtonGroup grupobotonesAtivados = new ButtonGroup();
+		grupobotonesAtivados.add(botonActivacion1);
+		grupobotonesAtivados.add(botonActivacion2);
+		grupobotonesAtivados.add(botonActivacion3);
 	}
 }
