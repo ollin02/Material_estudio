@@ -1,17 +1,21 @@
-package ventana_1;
+package Boton.org;
 
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
 
-import javax.swing.JFrame;//Paque de graficos de java JFrame es una clases con la cual podemos poner ventanas
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import javax.swing.ImageIcon;
 
 public class Ventana extends JFrame{
+	public JPanel panel;
+	
 	public Ventana() {
 		setSize(500,500);//Estblecemos el tamño de la ventana
 		setTitle("El mejor titulo");//Establecemos el titulo de la ventana
@@ -29,11 +33,21 @@ public class Ventana extends JFrame{
 	}
 	
 	private void iniciarComponentes() {
-		JPanel panel = new JPanel();//Creacion de un panel
+		
+		colocarPaneles();
+		//colocarEtiquetas();
+		colocarBotones();
+		
+	}
+	
+	private void colocarPaneles() {
+		panel = new JPanel();//Creacion de un panel
 		//panel.setBackground(Color.GREEN);//Establecemos el color del panel;
 		panel.setLayout(null);//Desacrivamos el Diseño
 		this.getContentPane().add(panel);//Agregamos el panel a la ventana
-		
+	}
+	
+	private void colocarEtiquetas() {
 		//Etiqueta 1 - etiqueta tipo Texto
 		//JLabel etiqueta =new JLabel("Hola",SwingConstants.CENTER);//Creamo una etiqueta
 		//Otra forma
@@ -46,9 +60,9 @@ public class Ventana extends JFrame{
 		//etiqueta.setBackground(Color.BLACK);//ambiamo es color de fondo de nuestra etiqueta
 		etiqueta.setFont(new Font("cooper black",0,40));//Establecemos la furntr del texto Font. establecemos el tipo de letra PLAIN es arial en la pocicion de Font.PLAIN se pueden poner los estilos de forma numerica
 		panel.add(etiqueta);//Agregamos la etiquetla al panel
-		
-		
-		
+				
+				
+				
 		//Etiqueta - etiqueta tipo imagen
 		//ImageIcon imagen = new ImageIcon("mundial_2018.jpg");
 		//JLabel etiqueta2 = new JLabel(imagen);
@@ -60,7 +74,37 @@ public class Ventana extends JFrame{
 		etiqueta2.setBounds(80, 90, 300, 300);//setBounds(eje x, eje y, WIDTH, HEIGHT);
 		etiqueta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(etiqueta2.getWidth(), etiqueta2.getHeight(), Image.SCALE_SMOOTH)));//getScaledInstance(WIDTH, HEIGHT, DO_NOTHING_ON_CLOSE)escala el tamaño de la imagen
 		panel.add(etiqueta2);
+
 	}
 	
-
+	private void colocarBotones() {
+		//Boton 1 - boton de texto
+		JButton boton1= new JButton();
+		boton1.setText("Click");//Establecemos untexto al boton
+		boton1.setBounds(100, 100, 100, 40);
+		boton1.setEnabled(true);//Establecemos el encendido del botón
+		boton1.setMnemonic('a');//Establecemos alt + letra y se cliquea
+		boton1.setForeground(Color.BLUE);//Estbalecemos el color de la letra
+		boton1.setFont(new Font("cooper black",2,20));//Establecemos la fuente el color y el tamaño
+		panel.add(boton1);
+		
+		//Boton 2 -boton de imagen
+		JButton boton2 = new JButton();
+		boton2.setBounds(100, 200, 100, 40);
+		//boton2.setOpaque(true);
+		ImageIcon clickAqui = new ImageIcon("boton.png");
+		boton2.setIcon(new ImageIcon(clickAqui.getImage().getScaledInstance(boton2.getWidth(), boton2.getHeight(), Image.SCALE_SMOOTH)));
+		//boton2.setBackground(Color.BLUE);//Establecemos el color de fondo del boton
+		panel.add(boton2);
+		
+		//Boton 3 - boton de bordes
+		JButton boton3 = new JButton();
+		boton3.setBounds(100,300,110,50);
+		boton3.setBorder(BorderFactory.createLineBorder(Color.GREEN, 4, false));
+		panel.add(boton3);
+		
+		
+		
+		
+	}
 }
