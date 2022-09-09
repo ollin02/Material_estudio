@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.SwingConstants;
 
@@ -41,7 +42,8 @@ public class Ventana extends JFrame{
 		//colocarEtiquetas();
 		//colocarBotones();
 		//colocarRadioBotones();
-		colocarcarBotonesActivacion();
+		//colocarcarBotonesActivacion();
+		colocarCajasTexto();
 		
 	}
 	
@@ -150,5 +152,17 @@ public class Ventana extends JFrame{
 		grupobotonesAtivados.add(botonActivacion1);
 		grupobotonesAtivados.add(botonActivacion2);
 		grupobotonesAtivados.add(botonActivacion3);
+	}
+	
+	private void colocarCajasTexto() {
+		JTextField cajaTexto = new JTextField();{
+			cajaTexto.setBounds(50, 50, 100, 30);
+			cajaTexto.setText("Hola.........");
+			
+			System.out.println("Texto en la caja: "+ cajaTexto.getText());
+			panel.add(cajaTexto);
+			
+			
+		}
 	}
 }
