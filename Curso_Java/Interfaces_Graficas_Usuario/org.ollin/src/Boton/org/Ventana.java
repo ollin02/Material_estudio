@@ -9,12 +9,14 @@ import java.util.Arrays;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
@@ -59,7 +61,8 @@ public class Ventana extends JFrame{
 		//colocarCasillasDeVerificacion();
 		//colocarListasDesplegables();
 		//colocarCampoDeContraseña();
-		colocarTablas();
+		//colocarTablas();
+		colocarListas();
 		
 	}
 	
@@ -306,6 +309,48 @@ public class Ventana extends JFrame{
 		JScrollPane barrasDesplazamiento = new JScrollPane(tabla,ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		barrasDesplazamiento.setBounds(20, 20, 300, 200);
 		panel.add(barrasDesplazamiento);
+		
+	}
+
+	private void colocarListas() {
+		DefaultListModel modelo = new DefaultListModel();
+		
+		modelo.addElement(new Persona("Ollin Gómez",21,"Mexicano"));
+		modelo.addElement(new Persona("Estefany Dabila",20,"Mexicano"));
+		modelo.addElement(new Persona("Tonatiuh Madrigal",23,"Chileno"));
+		modelo.addElement(new Persona("Rosa Gutierrez",22,"Peruana"));
+		modelo.addElement(new Persona("Emiliano Martinez",25,"Mexicano"));
+		modelo.addElement(new Persona("Pablo Garcia",27,"Peruana"));
+		modelo.addElement(new Persona("Cinthia Vazquez",28,"Mexicano"));
+		modelo.addElement(new Persona("Lucia Cortez",20,"Peruana"));
+		modelo.addElement(new Persona("Luis Balarezo",21,"Mexicano"));
+		modelo.addElement(new Persona("Iktan facio",24,"Peruana"));
+		modelo.addElement(new Persona("Jennifer Galindo",25,"Mexicano"));
+		modelo.addElement(new Persona("Diana Portano",27,"Peruana"));
+		modelo.addElement(new Persona("Liz Gonzalez",27,"Mexicano"));
+		modelo.addElement(new Persona("Elisa Perez",28,"Peruana"));
+		modelo.addElement(new Persona("Ezequiel Gutierrez",29,"Mexicano"));
+		modelo.addElement(new Persona("Iktan facio",24,"Peruana"));
+		modelo.addElement(new Persona("Jennifer Galindo",25,"Mexicano"));
+		modelo.addElement(new Persona("Diana Portano",27,"Peruana"));
+		modelo.addElement(new Persona("Liz Gonzalez",27,"Mexicano"));
+		modelo.addElement(new Persona("Elisa Perez",28,"Peruana"));
+		modelo.addElement(new Persona("Ezequiel Gutierrez",29,"Mexicano"));
+		modelo.addElement(new Persona("Iktan facio",24,"Peruana"));
+		modelo.addElement(new Persona("Jennifer Galindo",25,"Mexicano"));
+		modelo.addElement(new Persona("Diana Portano",27,"Peruana"));
+		modelo.addElement(new Persona("Liz Gonzalez",27,"Mexicano"));
+		modelo.addElement(new Persona("Elisa Perez",28,"Peruana"));
+		modelo.addElement(new Persona("Ezequiel Gutierrez",29,"Mexicano"));
+		
+		JList lista = new JList(modelo);
+		lista.setBounds(20, 20, 200, 300);
+		panel.add(lista);
+		
+		JScrollPane barrasDesplazamiento = new JScrollPane(lista,ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		barrasDesplazamiento.setBounds(20, 20, 300, 300);
+		panel.add(barrasDesplazamiento);
+		
 		
 	}
 }
