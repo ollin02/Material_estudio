@@ -96,32 +96,45 @@ public class Ventana extends JFrame{
 			
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				areaTexto.append("mouseReleased\n");
+				//areaTexto.append("mouseReleased\n");
 				
 			}
 			
 			@Override
 			public void mousePressed(MouseEvent e) {
-				areaTexto.append("mousePressed\n");
+				//areaTexto.append("mousePressed\n");
 				
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
-				areaTexto.append("mouseExited\n");
+				//areaTexto.append("mouseExited\n");
 				
 			}
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				areaTexto.append("mouseEntered\n");
+				//areaTexto.append("mouseEntered\n");
 				
 			}
 			
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				areaTexto.append("mouseClicked\n");
+				if(e.isAltDown()) {
+					areaTexto.append("Alt\n");
+				}else if(e.isControlDown()) {
+					areaTexto.append("Control\n");
+				}else if(e.isShiftDown()) {
+					areaTexto.append("Shift\n");
+				}else if(e.isMetaDown()) {
+					areaTexto.append("isMetaDawn\n");
+				}else {
+					areaTexto.append("Click Izquierdo\n");
+				}
 				
+				if(e.getClickCount()==2) {
+					areaTexto.append("Doble click\n");
+				}
 			}
 		};
 		
