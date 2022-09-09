@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
+import java.util.Arrays;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
@@ -15,6 +16,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -52,7 +54,8 @@ public class Ventana extends JFrame{
 		//colocarCajasTexto();
 		//colocarAreasTexto();
 		//colocarCasillasDeVerificacion();
-		colocarListasDesplegables();
+		//colocarListasDesplegables();
+		colocarCampoDeContraseña();
 		
 	}
 	
@@ -237,6 +240,22 @@ public class Ventana extends JFrame{
 		
 		listaDesplegable.setBounds(20,20,200,30);
 		panel.add(listaDesplegable);
+		
+	}
+
+	private void colocarCampoDeContraseña() {
+		JPasswordField campoContraseña =new JPasswordField();
+		campoContraseña.setBounds(20, 20, 150, 30);
+		campoContraseña.setText("Programacion");
+		panel.add(campoContraseña);
+		
+		String contraseña="";
+		
+		for(int i=0; i<campoContraseña.getPassword().length;i++) {
+			contraseña +=campoContraseña.getPassword()[i];
+		}
+		//System.out.println("Contraseña: "+Arrays.toString(campoContraseña.getPassword()));
+		System.out.println("Contraseña: "+contraseña);
 		
 	}
 }
