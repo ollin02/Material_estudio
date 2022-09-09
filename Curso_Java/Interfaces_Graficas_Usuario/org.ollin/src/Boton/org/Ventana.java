@@ -216,10 +216,13 @@ public class Ventana extends JFrame{
 	}
 	
 	private void colocarListasDesplegables() {
-		String [] paises = {"Peru","Colombi","Paraguay","Ecuador"};
+		String [] paises = {"Perú","Colombi","Paraguay","Ecuador"};
 		
 		JComboBox listaDesplegable1 = new JComboBox(paises);
 		listaDesplegable1.setBounds(20,20,100,30);
+		
+		listaDesplegable1.addItem("Argentina");//Añadir objetos a tu lista desplegable
+		listaDesplegable1.setSelectedItem("Paraguay");//Seleccionar el primer objeto visto
 		panel.add(listaDesplegable1);
 	}
 }
