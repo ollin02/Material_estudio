@@ -19,11 +19,14 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableColumnModel;
+import javax.swing.table.DefaultTableModel;
 
 public class Ventana extends JFrame{
 	public JPanel panel;
@@ -55,7 +58,8 @@ public class Ventana extends JFrame{
 		//colocarAreasTexto();
 		//colocarCasillasDeVerificacion();
 		//colocarListasDesplegables();
-		colocarCampoDeContraseña();
+		//colocarCampoDeContraseña();
+		colocarTablas();
 		
 	}
 	
@@ -256,6 +260,52 @@ public class Ventana extends JFrame{
 		}
 		//System.out.println("Contraseña: "+Arrays.toString(campoContraseña.getPassword()));
 		System.out.println("Contraseña: "+contraseña);
+	}
+	
+	private void colocarTablas() {
+		DefaultTableModel modelo = new DefaultTableModel();
+		
+		modelo.addColumn("Nombre");
+		modelo.addColumn("Edad");
+		modelo.addColumn("Nacionalidad");
+		
+		String [] persona1 = {"Ollin","21","Mexicano"};
+		String [] persona2 = {"Rosa","22","Peruana"};
+		String [] persona3 = {"Emiliano","25","Mexicano"};
+		String [] persona4 = {"Pablo","27","Peruana"};
+		String [] persona5 = {"Cinthia","28","Mexicano"};
+		String [] persona6 = {"Lucia","20","Peruana"};
+		String [] persona7 = {"Luis","21","Mexicano"};
+		String [] persona8 = {"Iktan","24","Peruana"};
+		String [] persona9 = {"Jennifer","25","Mexicano"};
+		String [] persona10 = {"Diana","27","Peruana"};
+		String [] persona11 = {"Liz","27","Mexicano"};
+		String [] persona12 = {"Elisa","28","Peruana"};
+		String [] persona13 = {"Ezequiel","29","Mexicano"};
+		
+		
+		modelo.addRow(persona1);
+		modelo.addRow(persona2);
+		modelo.addRow(persona3);
+		modelo.addRow(persona4);
+		modelo.addRow(persona5);
+		modelo.addRow(persona6);
+		modelo.addRow(persona7);
+		modelo.addRow(persona8);
+		modelo.addRow(persona9);
+		modelo.addRow(persona10);
+		modelo.addRow(persona11);
+		modelo.addRow(persona12);
+		modelo.addRow(persona13);
+		
+		JTable tabla = new JTable(modelo);
+		
+		tabla.setBounds(20, 20, 300, 200);
+		panel.add(tabla);
+		
+		JScrollPane barrasDesplazamiento = new JScrollPane(tabla,ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		barrasDesplazamiento.setBounds(20, 20, 300, 200);
+		panel.add(barrasDesplazamiento);
 		
 	}
 }
