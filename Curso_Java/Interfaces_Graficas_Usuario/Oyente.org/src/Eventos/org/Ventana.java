@@ -5,13 +5,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
 
 public class Ventana extends JFrame{
 	private JPanel panel;
@@ -43,6 +46,8 @@ public class Ventana extends JFrame{
 		panel = new JPanel();
 		panel.setLayout(null);
 		this.add(panel);
+		
+		eventoDeMovimientoDeRaton();
 	}
 	
 	private void colocarEtiqueta() {
@@ -63,6 +68,11 @@ public class Ventana extends JFrame{
 		areaTexto = new JTextArea();
 		areaTexto.setBounds(20,20,200,300);
 		panel.add(areaTexto);
+		
+		//otrometodo mas corto de barras de desplazamiento
+		JScrollPane barrasDesplazamiento = new JScrollPane(areaTexto,ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		barrasDesplazamiento.setBounds(20, 20, 200, 300);
+		panel.add(barrasDesplazamiento);
 	}
 	
 	private void colocarBoton() {
@@ -72,7 +82,7 @@ public class Ventana extends JFrame{
 		panel.add(boton);
 		
 		//eventoOyenteDeAccion();
-		eventoOyenteDeRaton();
+		//eventoOyenteDeRaton();
 	}
 	
 	
@@ -139,5 +149,21 @@ public class Ventana extends JFrame{
 		};
 		
 		boton.addMouseListener(oyenteDeRaton);
+	}
+
+	private void eventoDeMovimientoDeRaton() {
+		MouseMotionListener oyenteMovimintoRaton = new MouseMotionListener() {
+			
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				areaTexto.append("mouseMoved\n");
+			}
+			
+			@Override
+			public void mouseDragged(MouseEvent e) {
+				areaTexto.append("mouseDragged\n");
+			}
+		};
+		panel.addMouseMotionListener(oyenteMovimintoRaton);
 	}
 }
