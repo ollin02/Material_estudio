@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.SwingConstants;
@@ -43,7 +44,8 @@ public class Ventana extends JFrame{
 		//colocarBotones();
 		//colocarRadioBotones();
 		//colocarcarBotonesActivacion();
-		colocarCajasTexto();
+		//colocarCajasTexto();
+		colocarAreasTexto();
 		
 	}
 	
@@ -161,8 +163,18 @@ public class Ventana extends JFrame{
 			
 			System.out.println("Texto en la caja: "+ cajaTexto.getText());
 			panel.add(cajaTexto);
-			
-			
+				
 		}
+	}
+	
+	private void colocarAreasTexto() {
+		JTextArea areaTexto1= new JTextArea();
+		areaTexto1.setBounds(20, 20, 300, 200);
+		areaTexto1.setText("Escriba el texto aquí...");
+		areaTexto1.append("\nEscribe por aqui....");//Este metodo añade mas texto al aerea
+		areaTexto1.setEditable(true);//Establecer editado con el area de texto
+		
+		System.out.println("El texto es: "+areaTexto1.getText());
+		panel.add(areaTexto1);
 	}
 }
