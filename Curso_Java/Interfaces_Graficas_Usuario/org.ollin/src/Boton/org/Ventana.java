@@ -7,6 +7,7 @@ import java.awt.Image;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -216,13 +217,26 @@ public class Ventana extends JFrame{
 	}
 	
 	private void colocarListasDesplegables() {
-		String [] paises = {"Perú","Colombi","Paraguay","Ecuador"};
+		/*String [] paises = {"Perú","Colombia","Paraguay","Ecuador"};
 		
 		JComboBox listaDesplegable1 = new JComboBox(paises);
 		listaDesplegable1.setBounds(20,20,100,30);
 		
 		listaDesplegable1.addItem("Argentina");//Añadir objetos a tu lista desplegable
 		listaDesplegable1.setSelectedItem("Paraguay");//Seleccionar el primer objeto visto
-		panel.add(listaDesplegable1);
+		panel.add(listaDesplegable1);*/
+		
+		Persona persona1 = new Persona("Ollin Gómez",21,"Peruano");
+		Persona persona2 = new Persona("Tania Bustamante",20,"Argentina");
+		
+		DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+		JComboBox listaDesplegable = new JComboBox(modelo);
+		
+		modelo.addElement(persona1);
+		modelo.addElement(persona2);
+		
+		listaDesplegable.setBounds(20,20,200,30);
+		panel.add(listaDesplegable);
+		
 	}
 }
