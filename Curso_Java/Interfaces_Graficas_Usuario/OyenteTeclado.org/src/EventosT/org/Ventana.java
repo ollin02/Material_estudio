@@ -3,6 +3,8 @@ package EventosT.org;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -39,9 +41,9 @@ public class Ventana extends JFrame{
 	private void iniciarComponentes() {
 		colocarPanel();
 		//colocarEtiqueta();
-		//colocarCajaDeTexto();
+		colocarCajaDeTexto();
 		colocarAreaTexto();
-		colocarBoton();
+		//colocarBoton();
 	}
 	
 	private void colocarPanel() {
@@ -58,23 +60,24 @@ public class Ventana extends JFrame{
 		etiqueta.setBounds(30, 10, 200, 30);
 		etiqueta.setFont(new Font("cooper black",0,18));
 		panel.add(etiqueta);
-		
 	}
 	
 	private void colocarCajaDeTexto() {
 		cajaTexto = new JTextField();
-		cajaTexto.setBounds(30, 50, 300, 30);
+		cajaTexto.setBounds(20, 30, 150, 30);
 		panel.add(cajaTexto);
+		
+		eventosDelTeclado();
 	}
 	
 	private void colocarAreaTexto() {
 		areaTexto = new JTextArea();
-		areaTexto.setBounds(20,20,200,300);
+		areaTexto.setBounds(230,30,200,300);
 		panel.add(areaTexto);
 		
 		//otrometodo mas corto de barras de desplazamiento
 		JScrollPane barrasDesplazamiento = new JScrollPane(areaTexto,ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		barrasDesplazamiento.setBounds(20, 20, 200, 300);
+		barrasDesplazamiento.setBounds(230, 30, 200, 300);
 		panel.add(barrasDesplazamiento);
 	}
 	
@@ -184,5 +187,38 @@ public class Ventana extends JFrame{
 			}
 		};
 		panel.addMouseWheelListener(ruedaRaton);
+	}
+
+	private void eventosDelTeclado() {
+		KeyListener eventoTeclado = new KeyListener() {
+
+			@Override
+			public void keyTyped(KeyEvent e) {
+				//areaTexto.append("keyTyped\n");
+				
+			}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				//areaTexto.append("KeyPressed\n");
+				
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				//areaTexto.append("keyReleased\n");
+				if(e.getKeyChar()=='p') {
+					areaTexto.append("Letra p\n");
+				}
+				if(e.getKeyChar()=='\n') {
+					areaTexto.append("Enter\n");
+				}
+				if(e.getKeyChar()==' '){
+					areaTexto.append("Espacio\n");
+				}
+			}
+			
+		};
+		cajaTexto.addKeyListener(eventoTeclado);
 	}
 }
