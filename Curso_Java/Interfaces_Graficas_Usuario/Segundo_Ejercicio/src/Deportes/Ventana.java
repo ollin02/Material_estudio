@@ -1,8 +1,12 @@
 package Deportes;
 
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -10,7 +14,7 @@ import javax.swing.JRadioButton;
 
 public class Ventana extends JFrame{
 	private JPanel panel;
-	private JLabel etiqueta;
+	private JLabel etiqueta, imagen;
 	private JRadioButton rb1,rb2,rb3,rb4;
 	
 	public Ventana() {
@@ -69,5 +73,53 @@ public class Ventana extends JFrame{
 		grupo.add(rb3);
 		grupo.add(rb4);
 		
+		eventoDeAccion();
+	}
+	
+	private void eventoDeAccion() {
+		imagen = new JLabel();
+		imagen.setBounds(200, 80, 400, 220);
+		panel.add(imagen);
+		
+		final ImageIcon imagenFutbol = new ImageIcon(getClass().getResource("/Imagenes/Futbol.jpg"));
+		final ImageIcon imagenBaloncesto = new ImageIcon(getClass().getResource("/Imagenes/Baloncesto.jpg"));
+		final ImageIcon imagenTenis  = new ImageIcon(getClass().getResource("/Imagenes/Tenis.jpg"));
+		final ImageIcon imagenNatacion = new ImageIcon(getClass().getResource("/Imagenes/Natacion.jpg"));
+		
+		ActionListener eventoAccion1 = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				imagen.setIcon(new ImageIcon(imagenFutbol.getImage().getScaledInstance(imagen.getWidth(), imagen.getHeight(), Image.SCALE_SMOOTH)));
+				
+			}
+		};
+		rb1.addActionListener(eventoAccion1);
+		
+		ActionListener eventoAccion2 = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				imagen.setIcon(new ImageIcon(imagenBaloncesto.getImage().getScaledInstance(imagen.getWidth(), imagen.getHeight(), Image.SCALE_SMOOTH)));
+				
+			}
+		};
+		rb2.addActionListener(eventoAccion2);
+		
+		ActionListener eventoAccion3 = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				imagen.setIcon(new ImageIcon(imagenTenis.getImage().getScaledInstance(imagen.getWidth(), imagen.getHeight(), Image.SCALE_SMOOTH)));
+				
+			}
+		};
+		rb3.addActionListener(eventoAccion3);
+		
+		ActionListener eventoAccion4 = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				imagen.setIcon(new ImageIcon(imagenNatacion.getImage().getScaledInstance(imagen.getWidth(), imagen.getHeight(), Image.SCALE_SMOOTH)));
+				
+			}
+		};
+		rb4.addActionListener(eventoAccion4);
 	}
 }
