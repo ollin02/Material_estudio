@@ -43,7 +43,7 @@ public class ControladorInicio {
         return "modificar";
     }
     
-        @GetMapping("/eliminar/{idPersona}")
+        @GetMapping("/eliminar")
     public String eliminar(Persona persona){
         personaService.eliminar(persona);
         return "redirect:/";
