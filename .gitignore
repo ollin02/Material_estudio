@@ -236,3 +236,9 @@ bin
 
 # Ignora carpeta node_module
 node_modules/
+/Curso_Java/Interfaces_Graficas_Usuario/DiseñadorInterfasces/nbproject/private/
+/Curso_Java/Interfaces_Graficas_Usuario/DiseñadorInterfasces/build/
+/Curso_Java/Interfaces_Graficas_Usuario/Interface/nbproject/private/
+/Curso_Java/Interfaces_Graficas_Usuario/Interface/build/
+/Curso_Java/Interfaces_Graficas_Usuario/DiInterfaces/nbproject/private/
+/Curso_Java/Interfaces_Graficas_Usuario/DiInterfaces/build/
