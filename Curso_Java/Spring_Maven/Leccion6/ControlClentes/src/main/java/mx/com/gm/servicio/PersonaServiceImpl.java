@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class PersonaServiceImpl implements PersonaService{
+public class PersonaServiceImpl implements PersonaService {
 
     @Autowired
     private PersonaDao personaDao;
@@ -26,7 +26,7 @@ public class PersonaServiceImpl implements PersonaService{
     }
 
     @Override
-    @Transactional    
+    @Transactional
     public void eliminar(Persona persona) {
         personaDao.delete(persona);
     }
@@ -36,5 +36,4 @@ public class PersonaServiceImpl implements PersonaService{
     public Persona encontrarPersona(Persona persona) {
         return personaDao.findById(persona.getIdPersona()).orElse(null);
     }
-    
 }
