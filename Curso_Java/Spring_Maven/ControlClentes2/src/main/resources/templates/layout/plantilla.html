@@ -18,8 +18,8 @@
                 <a th:href="@{/(lang=en)}">EN</a> |
                 <span> [[#{plantilla.pie-pagina}]] <a href="http://www.globalmentoring.com.mx" target="_blank">GlobalMentoring.com.mx</a></span>
                 <form method="POST" th:action="@{/logout}">
-                    <b>User:</b> <span sec:authentication="name">Usuario que hizo loguin</span> |
-                    <b>Roles:</b> <span sec:authentication="principal.authorities">Roles</span> |
+                	<b>User:</b> <span sec:authentication="name">Usuario que hizo loguin</span> |
+                	<b>Roles:</b> <span sec:authentication="principal.authorities">Roles</span> |
                     <a href="#" onclick="this.parentNode.submit();">Logout</a>
                 </form>
             </div>
